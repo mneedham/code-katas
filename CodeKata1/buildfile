@@ -1,0 +1,23 @@
+VERSION_NUMBER="1.0.0"
+
+# Unit testing jars
+MOCKITO_JAR = "org.mockito:mockito-all:jar:1.5"
+HAMCREST_JAR = "org.hamcrest:hamcrest-all:jar:1.1"
+JUNIT_JAR = 'junit:junit:jar:4.5'
+
+repositories.local = './repository'
+
+repositories.remote << "http://repo.exist.com/maven2"
+repositories.remote << "http://www.ibiblio.org/maven2"
+repositories.remote << "http://maven.restlet.org"
+repositories.remote << "http://repository.codehaus.org"
+repositories.remote << "http://maven.openqa.org"
+repositories.remote << "http://download.java.net/maven/2"
+
+
+define 'code-kata-1' do
+	project.version=VERSION_NUMBER
+	
+	test.with MOCKITO_JAR, HAMCREST_JAR
+	package(:jar)
+end
