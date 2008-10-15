@@ -15,7 +15,15 @@ public class Items {
     }
 
     public Price calculatePrice() {
-        return pricingStrategy.calculatePrice(items);
+        return pricingStrategy.calculatePrice(derivePrices());
+    }
+
+    private List<Price> derivePrices() {
+        List<Price> prices = new ArrayList<Price>();
+        for (Item item : items) {
+            prices.add(item.getPrice());
+        }
+        return prices;
     }
 
     public void add(Item item) {

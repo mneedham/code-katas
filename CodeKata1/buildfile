@@ -17,7 +17,7 @@ repositories.remote << "http://download.java.net/maven/2"
 
 define 'code-kata-1' do
 	project.version=VERSION_NUMBER
-	
+	task('build' => 'test')
 	test.with MOCKITO_JAR, HAMCREST_JAR
 	package(:jar)
 end
