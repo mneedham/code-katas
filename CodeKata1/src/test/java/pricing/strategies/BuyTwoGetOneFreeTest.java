@@ -41,6 +41,4 @@ public class BuyTwoGetOneFreeTest {
     private List<Price> with(Price... prices) {
         return Arrays.asList(prices);
     }
-
-
 }
