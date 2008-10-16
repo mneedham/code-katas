@@ -13,10 +13,12 @@ public class BuyTwoGetOneFree implements PricingStrategy {
 
     private Price calculateAccumulatedPrice(List<Price> prices) {
         Price accumulatedPrice = new Price(0);
-        int numberOfPricesNotToAccumulate = prices.size() / 3;
-        for (int i = 0; i < prices.size() - numberOfPricesNotToAccumulate; i++) {
+
+        int numberOfPricesToAccumulate = prices.size() - (prices.size() / 3);
+        for (int i = 0; i < numberOfPricesToAccumulate; i++) {
             accumulatedPrice = accumulatedPrice.plus(prices.get(i));
         }
+        
         return accumulatedPrice;
     }
 

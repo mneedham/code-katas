@@ -33,11 +33,22 @@ public class BuyTwoGetOneFreeTest {
     public void shouldGiveCheapestItemFree() {
         BuyTwoGetOneFree buyTwoGetOneFree = new BuyTwoGetOneFree();
 
-        Price price = buyTwoGetOneFree.calculatePrice(with(new Price(1), new Price(2), new Price(3)));
+        Price price = buyTwoGetOneFree.calculatePrice(with(new Price(1), new Price(2), new Price(3), new Price(4)));
 
-        assertThat(price, equalTo(new Price(5)));
+        assertThat(price, equalTo(new Price(9)));
     }
 
+    @Test
+    public void shouldGiveCheapestItemsFree() {
+        BuyTwoGetOneFree buyTwoGetOneFree = new BuyTwoGetOneFree();
+
+        Price price = buyTwoGetOneFree.calculatePrice(with(new Price(1), new Price(2), new Price(3),
+                                                           new Price(4), new Price(5), new Price(6)));
+
+        assertThat(price, equalTo(new Price(18)));
+    }
+    
+    
     private List<Price> with(Price... prices) {
         return Arrays.asList(prices);
     }
