@@ -15,7 +15,7 @@ public class Items {
     }
 
     public Price calculatePrice() {
-        return pricingStrategy.calculatePrice(derivePrices());
+        return pricingStrategy.calculateTotalPrice(derivePrices());
     }
 
     private List<Price> derivePrices() {

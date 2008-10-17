@@ -6,5 +6,5 @@ import pricing.Price;
 import java.util.List;
 
 public interface PricingStrategy {
-    Price calculatePrice(List<Price> prices);
+    Price calculateTotalPrice(List<Price> prices);
 }

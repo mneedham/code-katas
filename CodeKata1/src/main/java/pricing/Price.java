@@ -1,9 +1,9 @@
 package pricing;
 
 public class Price implements Comparable<Price> {
-    private int value;
+    private double value;
 
-    public Price(int value) {
+    public Price(double value) {
         this.value = value;
     }
 
@@ -17,7 +17,7 @@ public class Price implements Comparable<Price> {
     }
 
     public int hashCode() {
-        return value;
+        return (int) value;
     }
 
     public String toString() {

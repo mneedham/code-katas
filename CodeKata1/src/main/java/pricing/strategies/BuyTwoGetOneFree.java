@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Collections;
 
 public class BuyTwoGetOneFree implements PricingStrategy {
-    public Price calculatePrice(List<Price> prices) {
+    public Price calculateTotalPrice(List<Price> prices) {
         sortIntoDescendingOrder(prices);
         return calculateAccumulatedPrice(prices);
     }
