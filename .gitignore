@@ -1,1 +1,5 @@
-build§
+build
+CodeKata1/src/test/java/spiking
+**/*.iml
+**/*.ipr
+**/*.iws
